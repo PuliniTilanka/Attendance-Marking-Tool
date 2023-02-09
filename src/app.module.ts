@@ -1,7 +1,6 @@
 import {Module} from '@nestjs/common';
 import {AppController} from './app.controller';
 import {AppService} from './app.service';
-import {AdminDashboardController} from './admin_dashboard/admin_dashboard.controller';
 import {EmployeeModule} from './employee/employee.module';
 import {TypeOrmModule} from "@nestjs/typeorm";
 import {HolidayModule} from './holiday/holiday.module';
@@ -9,8 +8,8 @@ import {AttendanceModule} from './attendance/attendance.module';
 import {Employee} from "./employee/employee";
 import {Holiday} from "./holiday/holiday";
 import {Attendance} from "./attendance/attendance";
-import { AuthModule } from './auth/auth.module';
-import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
+import {AuthModule} from './auth/auth.module';
+import {AdminDashboardModule} from './admin-dashboard/admin-dashboard.module';
 
 @Module({
     imports: [EmployeeModule, HolidayModule, AttendanceModule,
@@ -26,10 +25,8 @@ import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
         }),
         AuthModule,
         AdminDashboardModule],
-    controllers: [AppController,
-        AdminDashboardController],
-    providers: [AppService,
-    ],
+    controllers: [AppController],
+    providers: [AppService],
 })
 export class AppModule {
 }
