@@ -10,6 +10,7 @@ import {Employee} from "./employee/employee";
 import {Holiday} from "./holiday/holiday";
 import {Attendance} from "./attendance/attendance";
 import { AuthModule } from './auth/auth.module';
+import { AdminDashboardModule } from './admin-dashboard/admin-dashboard.module';
 
 @Module({
     imports: [EmployeeModule, HolidayModule, AttendanceModule,
@@ -23,7 +24,8 @@ import { AuthModule } from './auth/auth.module';
             entities: [Employee, Holiday, Attendance],
             synchronize: false,
         }),
-        AuthModule],
+        AuthModule,
+        AdminDashboardModule],
     controllers: [AppController,
         AdminDashboardController],
     providers: [AppService,
