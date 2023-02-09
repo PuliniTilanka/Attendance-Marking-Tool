@@ -9,6 +9,7 @@ import {AttendanceModule} from './attendance/attendance.module';
 import {Employee} from "./employee/employee";
 import {Holiday} from "./holiday/holiday";
 import {Attendance} from "./attendance/attendance";
+import { AuthModule } from './auth/auth.module';
 
 @Module({
     imports: [EmployeeModule, HolidayModule, AttendanceModule,
@@ -21,7 +22,8 @@ import {Attendance} from "./attendance/attendance";
             database: 'attendance_mgt_tool',
             entities: [Employee, Holiday, Attendance],
             synchronize: false,
-        })],
+        }),
+        AuthModule],
     controllers: [AppController,
         AdminDashboardController],
     providers: [AppService,
